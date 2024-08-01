@@ -1,0 +1,13 @@
+{
+  "name": "day1_31jul",
+  "version": "1.0.0",
+  "main": "eval.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

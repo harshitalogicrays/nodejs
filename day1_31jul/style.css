@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-radius: 30px;
+    margin: auto;
+    border: 5px dotted black;
+    box-shadow: 0.3em 0.3em 1em rgba(105, 96, 96, 0.6);
+
+}
+.hero-main{
+padding: 50px;
+}
+label {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #333;
+    height: 20px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+input {
+    height: 20px;
+    width: 250px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: left;
+}
+input[type=button] {
+    float:none;
+}
+button{
+    font-size: 18px;
+    height: 30px;
+    border: 1px solid #000;
+    margin: 10px;
+    float: left;
+}

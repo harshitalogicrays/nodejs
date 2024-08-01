@@ -1,0 +1,25 @@
+Frontend 
+Backend  - nodejs -> expressjs (web framework for nodejs) -> mini project (express + mongoDB)
+chat app - socket.io 
+Database 
+
+=============================================
+what is nodejs - nodejs is runtime environment to execute js outside the browser.
+we can use node to write javascript code on server side.
+
+open source , cross platform ,asynchronus , single thread , event driven 
+
+2009 -> 2010 => Ryan Dhal
+
+written in c++ and built on top of v8 engine.
+
+
+let str = "2+3*5"
+
+=================================================
+npm - 
+1. local - npm i bootstrap 
+2. global  -  npm i -g nodemon 
+=======================================================
+
+http core module - 
