@@ -1,0 +1,3 @@
+hello good morningIt's raining today \nand weekend so let's have pakodas with hot tea
+hope so new line command is working
+yes it is working

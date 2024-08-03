@@ -1,0 +1,13 @@
+fs 
+
+url 
+os 
+dns 
+stream 
+buffer 
+How nodejs works - thread pool 
+
+tuesday 
+thursday - will confirm thursday morning
+
+Saturday 
