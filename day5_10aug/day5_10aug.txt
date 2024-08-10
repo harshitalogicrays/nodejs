@@ -1,0 +1,34 @@
+fs module - 
+
+
+SF -------> Read Buffer -----> readfile --> writefile ------> write buffer ------> DF write 
+
+
+SF ---> read buffer---> readfile
+        (chunk) 
+streaming - 
+
+chunk ---> storing in the memory --> use it ---> freeing memory
+data processing more efficient 
+
+Types -
+1. readable stream  -  from where we read data chunk by chunk 
+2. writeable stream  -  to which we can write data chunk by chunk 
+3. duplex stream - readable and writeable at the same time 
+                    ex-  web socket 
+4. transform stream - modify or transform data as it is read or written 
+                    ex-  zlib (compression and decompression)
+                         uppercase 
+
+
+readable stream - request stream ,readfile 
+                events - data, end 
+                methods - read and pipe 
+
+writable stream - response stream , writefile 
+                    events - drain and finish 
+                    methods - write and end
+
+zlib 
+event custom 
+socket.io 
