@@ -1,0 +1,12 @@
+database connectivity 
+
+host - 127.0.0.1 /localhost 
+username - root 
+password - 
+port - 3306 
+database
+
+insert 
+fetch 
+update 
+delete 

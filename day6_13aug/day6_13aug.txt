@@ -1,0 +1,64 @@
+socket.io  - chat application
+=============================================================
+zlib 
+event custom  - 
+             event emit                    call event handler
+EventEmitter -----------> Event Listener  --------------------> Event Handler (function)
+
+EventEmitter - responsible to emit/raise event.
+something important happen in the app 
+
+Event Listener -  Listen event 
+event handler - call handler function
+===============================================================================================
+libuv ---> 1. event loop  - easy task 
+           2. thread pool  - heavy task 
+
+nodejs is single thread  (main thread) -  top level code 
+
+process - program under execution . 
+process 
+=================================================================
+
+crypto
+OS 
+DNS 
+
+
+saturday  -  Friday evening 
+tuesday 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
