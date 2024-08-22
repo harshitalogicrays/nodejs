@@ -1,0 +1,14 @@
+MVC - 
+model - dB
+view - html 
+controller - business logics 
+routes 
+======================================
+static files 
+view 
+render 
+errors 
+templateing engine 
+
+express-generator 
+
