@@ -1,0 +1,4 @@
+global error handling middleware -
+1. operational errors - invalid route, request timeout, connection error
+2. programming errors - read undefined var, await without async, req.query at the place of req.params , passing wrong argument 
+

@@ -1,0 +1,14 @@
+
+<h1>hello</h1>
+<h2>{{title}}</h2>
+
+{{#each names}}
+  <h5>{{this}}</h5>
+{{/each}}  
+
+{{#if isActive}}
+  <h4>User is active </h4>
+  <h5 class="text-primary">Welcome {{name}}</h5>
+{{else}}
+<h4>User is not active</h4>
+{{/if}}
