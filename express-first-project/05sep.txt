@@ -1,0 +1,17 @@
+MVC architecture -
+
+Model - Business Logic (DB)
+view - Presentation Logic 
+Controller - Application logic
+
+
+client -----> routing  ------------> Controller -------> Model 
+                                                <-------
+
+
+                                                --------> View 
+                                                <--------
+
+====================================================================
+DB  -
+1. connect establish 

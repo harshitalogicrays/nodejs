@@ -3,9 +3,10 @@ import express from 'express';
 import path from 'path'
 import cookieParser from 'cookie-parser';
 import logger from 'morgan'
-
+import 'dotenv/config'
 import indexRouter  from './routes/index.js'
-import usersRouter from './routes/users.js'
+import formRouter from './routes/formhandling.js'
+import connectDB from './db.js';
 
 const app = express();
 
@@ -24,7 +25,11 @@ app.use('/css',express.static(path.join(__dirname,'/node_modules/bootstrap/dist/
 app.use('/js',express.static(path.join(__dirname,'/node_modules/bootstrap/dist/js')))
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/form', formRouter);
+
+
+connectDB(process.env.DBURL)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
