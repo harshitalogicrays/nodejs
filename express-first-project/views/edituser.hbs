@@ -1,0 +1,19 @@
+<div class="container mt-5 shadow p-3">
+    <h1>Update</h1><hr/>
+    <form method="post" action="/form/user/update/{{data._id}}">
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="text" name="email"  value={{data.email}}
+            class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Password</label>
+        <input type="password" name="password" value={{data.password}}
+            class="form-control" />
+    </div>
+    <button type="submit"  class="btn btn-primary"  >
+        Submit
+    </button>
+    
+    </form>
+</div>

@@ -8,7 +8,12 @@ const formSchema = new Schema({
     password:String
 })
 
-const Form = mongoose.model("formdata",formSchema)
+// formSchema.index({ email: 1 }, { unique: true });
+
+const Form = mongoose.model("formdata", formSchema);
+// Form.init()  // This ensures indexes are created
+//   .then(() => console.log("Indexes created successfully"))
+//   .catch(err => console.error("Error creating indexes", err))
 
 export default Form
 //formdatas collection name
