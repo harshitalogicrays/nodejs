@@ -1,0 +1,30 @@
+<div class="container mt-5">
+<h1>{{title}}</h1><hr/>
+{{!-- <form method="post" enctype="multipart/form-data" action="/">
+    <div class="mb-3">
+        <label for="" class="form-label">Choose file</label>
+        <input  type="file" class="form-control"   name="image"   />
+    </div>
+    <button type="submit" class="btn btn-primary"> Submit   </button>
+</form> --}}
+
+
+<form method="post" enctype="multipart/form-data" action="/">   
+    <div class="mb-3">
+        <label for="" class="form-label">Choose file</label>
+        <input  type="file" class="form-control"   name="images" multiple  />
+    </div>
+    <button type="submit" class="btn btn-primary"> Submit   </button>
+</form>
+</div>
+{{#if err}} <span class="text-danger">{{err}}</span>{{/if}}
+{{#if msg}}<span class="text-success">{{msg}}</span>{{/if}}
+<br/>
+{{!-- {{#if file}} <img src="/{{file}}" width="200px" height="200px"/>{{/if}} --}}
+
+
+{{#if files}}
+    {{#each files}}
+         <img src="/{{this}}" width="200px" height="200px"/>
+    {{/each}}
+ {{/if}} 
