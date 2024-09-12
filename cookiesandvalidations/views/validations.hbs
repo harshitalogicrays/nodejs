@@ -1,0 +1,39 @@
+<div class="container mt-5 col-6">
+    <h1 class="mb-3">express validation demo</h1>
+
+    {{!-- {{#if errors}}
+    {{#each errors}}
+    <div class="text-danger">{{this.msg}}</div>
+    {{/each}}
+{{/if}} --}}
+
+<form method="post" action="/validations">
+<div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <input  type="text"  name="name"  class="form-control" value="{{formdata.name}}"/>
+    {{#if errors}}
+    <span class="text-danger">{{errors.name}}</span> {{/if}}
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Email</label>
+    <input  type="text"  name="email"  class="form-control"
+    value="{{formdata.email}}"/>
+        <span class="text-danger">{{errors.email}}</span>
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Password</label>
+    <input  type="password"  name="password"  class="form-control"
+    value="{{formdata.password}}"/>
+        <span class="text-danger">{{errors.password}}</span>
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Confirm Password</label>
+    <input  type="password"  name="cpassword"  class="form-control" 
+    value="{{formdata.cpassword}}"/>
+        <span class="text-danger">{{errors.cpassword}}</span>
+</div>
+<button type="submit" class="btn btn-primary">
+    Submit
+</button>
+</form>
+</div>
