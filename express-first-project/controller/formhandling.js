@@ -54,6 +54,7 @@ let displayusers=async(req,res)=>{
     console.log("eletuj")
     try{
         let res1 =await Form.find()
+        // let res1 =await Form.find().select('email').exec()
         // console.log(res1)
         res.render('getusers',{title:"Users List",data:res1});
     }

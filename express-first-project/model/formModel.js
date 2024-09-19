@@ -5,7 +5,7 @@ const formSchema = new Schema({
             required: [true,"email is required"],
             unique: true
 },
-    password:String
+    password:{type:String}
 })
 
 // formSchema.index({ email: 1 }, { unique: true });
@@ -17,3 +17,6 @@ const Form = mongoose.model("formdata", formSchema);
 
 export default Form
 //formdatas collection name
+
+
+ // password:{type:String,select:false}

@@ -1,0 +1,61 @@
+name:String 
+
+name:{type:String}
+
+createdAt:{type:Date,default:Date.now()}
+isActive:{type:Boolean,default:false}
+
+hobbies:[String]
+
+data:{type:Schema.Types.mixed}
+
+images:{type:Buffer}
+
+name:{type:String,match:/[a-z]+/}
+
+role:{type:String,enum:['admin','user']}
+
+age:{type:Number,
+	validate:{
+		validator:function(v){ return v>18},
+		message:'age should be at least 18'
+	}
+}
+
+===============================================
+
+Users collection - _id:Schema.Types.ObjectId
+
+Contact collection 
+userid:{type:Schema.Types.ObjectId,ref:'Users'}
+
+users - _id, name, email , mobile 
+		 1   aaa      aaa	
+		 2   bbb       bbbb
+			
+conatct -_id address , state , city, country , userid
+          1  ehj      ete     et e    etet     1
+	      2 ehj      ete     et e    etet      1
+		  
+
+select - true or false 
+
+
+const formSchema = new Schema({
+    email:{ type: String,
+            required: [true,"email is required"],
+            unique: true
+},
+    password:{type:String,select:false}
+})
+
+===========================================
+React 
+express node - 
+mongodb - atlas
+
+register , login 
+chat -> 
+search -> 
+group chat ->  
+notification  
