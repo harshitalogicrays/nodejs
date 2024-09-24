@@ -1,8 +1,9 @@
 import asyncHandler from "express-async-handler"
 import User from "../model/userModel.js"
+import generateToken from "../config/generateToken.js"
 
 export let registerUser=asyncHandler(async(req,res)=>{
- let {email,password,name} = req.body
+ let {email,password,name,profilepic} = req.body
  if(!name || !email || !password){
     res.status(400).send("Please enter all the fields")
  }
@@ -13,10 +14,11 @@ export let registerUser=asyncHandler(async(req,res)=>{
     // throw new Error("User already exists")
  }
  else{
-    const user= await User.create({name,email,password})
+    const user= await User.create({name,email,password,profilepic})
     if(user){
         res.status(201).json({
-            _id:user._id,name:user.name,email:user.email,password:user.password,profilepic:user.profilepic
+            _id:user._id,name:user.name,email:user.email,password:user.password,profilepic:user.profilepic,
+            token:generateToken(user._id)
         })
     }
     else { res.status(400)
@@ -31,7 +33,8 @@ export let authUser=asyncHandler(async(req,res)=>{
     if(user && (await user.matchPassword(password))){
         res.json({
             _id:user._id,name:user.name,email:user.email,password:user.password,profilepic:user.profilepic,
-            isAdmin:user.isAdmin
+            isAdmin:user.isAdmin,
+            token:generateToken(user._id)
         })
     }
     else res.status(400).json({"status":400,"message":"Invalid Credentials"})
