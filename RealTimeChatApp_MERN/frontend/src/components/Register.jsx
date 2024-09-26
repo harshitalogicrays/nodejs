@@ -47,7 +47,7 @@ const Register = () => {
    else {
     let obj = {name,email,password,profilepic:pic}
     try{
-        let res  = await fetch("http://localhost:4000",{
+        let res  = await fetch("/api",{
           method:"POST",
           headers:{'content-type':'application/json'},
           body:JSON.stringify(obj)

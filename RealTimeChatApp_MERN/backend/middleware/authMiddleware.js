@@ -1,17 +1,18 @@
 import expressAsyncHandler from "express-async-handler"
 import jwt from 'jsonwebtoken'
 import 'dotenv/config'
-import User from "../model/userModel"
+import User from "../model/userModel.js"
 
 const authorized  =  expressAsyncHandler(async(req,res,next)=>{
-    let token =''
-    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
+    let token
+      if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
         try{
-            token =  req.headers.authorization.split("")[1]
+            token =  req.headers.authorization.split(" ")[1]
 
             //decode token 
             const decode = jwt.verify(token,process.env.JWT_SECRET_KEY) 
-            req.user =  await User.findById(decode).select("-password")
+            req.user =  await User.findById(decode.id).select("-password")
+         
             next()
         }
         catch(error){

@@ -16,7 +16,7 @@ const Login = () => {
     if (!email || !password){toast.error("please fill fields");setLoading(false)}
     else{
       try{
-        let res  = await fetch("http://localhost:4000/login",{
+        let res  = await fetch("/api/login",{
           method:"POST",
           headers:{'content-type':'application/json'},
           body:JSON.stringify({email,password})
