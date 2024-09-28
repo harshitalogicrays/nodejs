@@ -3,6 +3,7 @@ import 'dotenv/config'
 import connectDB from './config/db.js'
 import userRouter from './routes/user.js'
 import chatRouter from './routes/chat.js'
+import messageRouter from './routes/message.js'
 import cors from 'cors'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 
@@ -14,6 +15,7 @@ app.use(notFound)
 app.use(errorHandler)
 app.use('/',userRouter)
 app.use('/chat',chatRouter)
+app.use('/message',messageRouter)
 
 
 

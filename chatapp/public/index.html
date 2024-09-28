@@ -108,7 +108,6 @@
             const item =document.createElement('li')
             const messageContainer = document.createElement('div')
             messageContainer.classList.add('message-content')
-
             if(data.username==currentUser){
                 item.classList.add('d-flex','message-right')
                 messageContainer.innerHTML = `<span>${data.message}</span>`
