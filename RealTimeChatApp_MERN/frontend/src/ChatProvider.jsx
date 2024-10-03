@@ -6,13 +6,15 @@ const ChatProvider = ({children}) => {
     const [selectedChat,setSelectedChat]=useState('')
     const [user,setUser] = useState()
     const [notification,setNotification]=useState()
-    const [chats,setChats]=useState()
+    const [chats,setChats]=useState(["erwr","wrq","weqr","wqrqr","wqr"])
 
     const navigate=useNavigate()
     useEffect(()=>{
-        const userInfo =localStorage.getItem("userInfo")
+      if(localStorage.getItem("userInfo")!=null){
+        const userInfo =JSON.parse(localStorage.getItem("userInfo"))
         setUser(userInfo)
-        if(!userInfo) navigate('/')
+      }
+      else navigate('/')
     },[localStorage.getItem("userInfo")])
   return (
     <chat.Provider value={{selectedChat,setSelectedChat,user,setUser,notification,setNotification,chats,setChats}}>

@@ -1,17 +1,35 @@
-import { Box, Button,Text } from '@chakra-ui/react'
+import { Avatar, Box, Button,Menu,MenuButton,MenuDivider,MenuItem,MenuList,Text } from '@chakra-ui/react'
 import React from 'react'
 import {FaSearch} from 'react-icons/fa'
+import {BellIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import { chatState } from '../ChatProvider'
 const ChatHeader = () => {
+  const {user}=chatState()
   return (
-   <Box d="flex" justifyContent="space-between" alignItems="center" bg="white"
-   w="100%" p="5px" borderWidth="5px">
-
-    <Button variant='ghost'>
+   <Box   display="flex" justifyContent="space-between" alignItems="center"
+   bg="white" w="100%" p="5px 10px 5px 10px" borderWidth="5px">
+    <Button variant='ghost' >
         <FaSearch/>
-        <Text mt="8px" d="flex">search here</Text>
+        <Text display={{ base: "none", md: "flex" }} mt={4} px={4}>search here</Text>
     </Button>
-    <Text d="inline">Chat App</Text>
-  
+    <Text fontSize="2xl">Chat App</Text>
+        <div>
+          <Menu >
+            <MenuButton>
+              <BellIcon boxSize={6} />
+            </MenuButton>
+          </Menu>
+          <Menu >
+            <MenuButton as={Button} bg="white" rightIcon={<ChevronDownIcon />}>
+              <Avatar size="sm" cursor="pointer" name={user.name} src={user.profilepic}/>
+            </MenuButton>
+            <MenuList>
+                <MenuItem>My Profile</MenuItem>
+              <MenuDivider />
+              <MenuItem>Logout</MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
    </Box>
   )
 }

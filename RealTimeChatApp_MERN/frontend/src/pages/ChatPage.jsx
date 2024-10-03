@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { chatState } from '../ChatProvider'
 import ChatHeader from '../components/ChatHeader'
 import { Box } from '@chakra-ui/react'
+import MyChats from '../components/MyChats'
+import ChatBox from '../components/ChatBox'
 
 const ChatPage = () => {
     const {user} = chatState()
+    const [fetchChat,setFetchChat]=useState()
    return (
-    <div>
+    <div style={{ width: "100%" }}>
       {user && <ChatHeader/>}
       <Box d="flex" justifyContent="space-between" w='100%' h='91vh' p='10px'>
-        {user && "mychats"}
-        {user && "chatBox"}
+        {user && <MyChats/>}
+        {user && <ChatBox fetchChat={fetchChat}
+        setFetchChat={setFetchChat}
+        />}
       </Box>
     </div>
   )
