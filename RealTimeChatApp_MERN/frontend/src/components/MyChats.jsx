@@ -5,6 +5,7 @@ import ChatLoading from './ChatLoading'
 import { AddIcon } from '@chakra-ui/icons'
 import { getSender } from './functions'
 import { toast } from 'react-toastify'
+import GroupChat from './GroupChat'
 
 const MyChats = ({ fetchChat }) => {
     const {selectedChat,setSelectedChat,user,chats,setChats} = chatState()
@@ -35,13 +36,12 @@ const MyChats = ({ fetchChat }) => {
       <Box pb={3}   px={3}  fontSize={{ base: "28px", md: "30px" }}
         display="flex"  w="100%" justifyContent="space-between"   alignItems="center"   >
         My Chats
-          <Button
-            display="flex"
-            fontSize={{ base: "17px", md: "10px", lg: "17px" }}
-            rightIcon={<AddIcon />}
-          >
-            New Group Chat
-          </Button>
+        
+        <GroupChat>
+          <Button  display="flex" fontSize={{ base: "17px", md: "10px", lg: "17px" }}
+            rightIcon={<AddIcon />} >New Group Chat </Button>
+        </GroupChat>
+      
       </Box>
       <Box   display="flex"   flexDir="column"  p={3}  bg="white smoke"
         w="100%"h="100%" borderRadius="lg"   overflowY="hidden" >
