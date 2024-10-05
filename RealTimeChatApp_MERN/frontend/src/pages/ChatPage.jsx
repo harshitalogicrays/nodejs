@@ -11,8 +11,8 @@ const ChatPage = () => {
    return (
     <div style={{ width: "100%" }}>
       {user && <ChatHeader/>}
-      <Box d="flex" justifyContent="space-between" w='100%' h='91vh' p='10px'>
-        {user && <MyChats/>}
+      <Box display="flex" justifyContent="space-between" w='100%' h='91vh' p='10px'>
+        {user && <MyChats fetchChat={fetchChat}/>}
         {user && <ChatBox fetchChat={fetchChat}
         setFetchChat={setFetchChat}
         />}
