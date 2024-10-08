@@ -48,7 +48,7 @@ const MyChats = ({ fetchChat }) => {
         {chats ? (
           <Stack overflowY="scroll">
             {chats.map((chat) =>{ 
-              console.log(chat)
+              // console.log(chat)
               let obj={}
               if(!chat.isGroupChat){obj = getSender(loggedInUser, chat.users)}
                  

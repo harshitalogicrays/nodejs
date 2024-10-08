@@ -6,11 +6,7 @@ const Profile = ({user,children}) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-    {children ? (
-        <span onClick={onOpen}>{children}</span>
-      ) : (
-        <IconButton display={{ base: "flex" }} icon={<ViewIcon />} onClick={onOpen} />
-      )}
+       <span onClick={onOpen}>{children}</span>
          <Modal isOpen={isOpen} onClose={onClose} isCentered size="lg" closeOnOverlayClick={false}>
             <ModalOverlay />
             <ModalContent>
