@@ -8,6 +8,7 @@ import {toast} from 'react-toastify'
 import Profile from './Profile'
 import ChatLoading from './ChatLoading'
 import UserListItem from './UserListItem'
+import { getSender } from './functions'
 const ChatHeader = () => {
   let [search,setSearch]=useState('')
   const [searchResult, setSearchResult] = useState([]);
@@ -73,7 +74,25 @@ const ChatHeader = () => {
           <Menu >
             <MenuButton>
               <BellIcon boxSize={6} />
+              <span class="badge rounded-pill text-bg-danger" >{notification.length>0 && notification.length}</span> 
             </MenuButton>
+            <MenuList pl={2}>
+              {notification.length==0 && "No New Messages"}
+              {notification.map((notif) => (
+                <MenuItem
+                  key={notif._id}
+                  onClick={() => {
+                    setSelectedChat(notif.chat);
+                    setNotification(notification.filter((n) => n !== notif));
+                  }}
+                >
+                  {notif.chat.isGroupChat
+                    ? `New Message in ${notif.chat.chatName}`
+                    : `New Message from ${getSender(user, notif.chat.users).name}`}
+                </MenuItem>
+              ))}
+            </MenuList>
+
           </Menu>
           <Menu >
             <MenuButton as={Button} bg="white" rightIcon={<ChevronDownIcon />}>

@@ -1,4 +1,4 @@
-import { Avatar } from '@chakra-ui/react'
+import { Avatar, Text } from '@chakra-ui/react'
 import React from 'react'
 import ScrollableFeed from "react-scrollable-feed"
 import { isLastMessage, isSameSender, isSameSenderMargin, isSameUser } from './functions'
@@ -34,6 +34,7 @@ const ScrollableChat = ({messages}) => {
             }}
           >
             {m.content}
+            {m.readBy.includes(user._id) && <Text color="blue">✔</Text>}
           </span>
         </div>
       ))}

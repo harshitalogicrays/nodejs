@@ -16,6 +16,8 @@ const UpdateGroupChat = ({fetchMessages, fetchChat, setFetchChat,children}) => {
 
     const { selectedChat, setSelectedChat, user } = chatState()
 
+    // console.log(selectedChat)
+
     const handleSearch = async (query) => {
         setSearch(query); if (!query) {return}  
         try {

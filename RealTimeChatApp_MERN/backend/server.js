@@ -8,7 +8,7 @@ import cors from 'cors'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 import {Server} from 'socket.io'
 import http from 'http'
-const server =http.createServer()
+import Message from './model/messageModel.js'
 
 const app = express()
 connectDB(process.env.DB_URL)
@@ -23,12 +23,18 @@ app.use('/message',messageRouter)
 
 
 let port = process.env.PORT || 3000
-app.listen(port,()=>{
+let server = app.listen(port,()=>{
     console.log(`server started at http://localhost:${port}`)
 })
 
 
-const io = new Server(server)
+const io = new Server(server, {
+    pingTimeout: 60000,
+    cors: {
+      origin: "http://localhost:3000",
+    },
+  });
+
 io.on("connection",(socket)=>{
     console.log("user connected")
 
@@ -56,6 +62,21 @@ io.on("connection",(socket)=>{
         socket.in(user._id).emit("message received",msg)
     })
     })
+
+    socket.on('messageRead', async ({ messageId, userId }) => {
+        try {
+          await Message.findByIdAndUpdate(
+            messageId,
+            { $addToSet: { readBy: userId } }, // $addToSet prevents duplicate entries
+            { new: true }
+          );
+          io.emit('messageRead', { messageId, userId });
+  
+        } catch (error) {
+          console.error('Error updating readBy field:', error);
+        }
+      });
+
 
     socket.off("setup",()=>{
         console.log("user disconnected")

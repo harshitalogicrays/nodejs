@@ -1,0 +1,11 @@
+backend ->
+vercel.json -> 
+backend deploy  -> URL 
+
+frontend -> vite.config.js -> deployed URL 
+deploy frontend
+
+
+emoji-mart react package
+images send 
+delete msg 
